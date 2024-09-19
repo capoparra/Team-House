@@ -20,6 +20,8 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     if (($_POST['password'] == $result[6])) {
         //inicializamos session
         $_SESSION['idUser'] = $result['cedula'];
+        $_SESSION['nombre'] = $result['nombre'];
+        $_SESSION['apellido'] = $result['apellido'];
         header('Location: index.php');
     
     } else {

@@ -2,6 +2,16 @@
 header('Content-Type: application/json');
 include '../conexion db/conexion.php';
 
+require '../libs/PHPMailer/src/Exception.php';
+require '../libs/PHPMailer/src/PHPMailer.php';
+require '../libs/PHPMailer/src/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+
+$mail = new PHPMailer(true);
+
 $email = $_POST['email'] ?? '';
 
 if (empty($email)) {
@@ -34,6 +44,30 @@ if ($result->num_rows > 0) {
         $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
         mail($to, $subject, $message, $headers); */
+
+
+        $mail->isSMTP();
+        // $mail->SMTPDebug = 3;
+        $mail->Host = 'smtp.gmail.com'; 
+        $mail->SMTPAuth = true;
+        $mail->Username = 'cdvalencia2@gmail.com'; 
+        $mail->Password = 'sost aiqy ngmb woze'; 
+        
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+    
+        
+        $mail->setFrom('cdvalencia2@gmail.com', 'Team House');
+        $mail->addAddress($email, 'Team House');
+        
+    
+        
+        $mail->isHTML(true);
+        $mail->Subject = 'Team House';
+        $mail->Body = 'Ingresa en este enlace para recuperar tu correo -> <a href="http://localhost/Team-House/recuperacion2.php?code='.$reset_code.'">presiona para recuperar tu contraseña</href>';
+        $mail->AltBody = '';
+    
+        $mail->send();
     
     
     if ($stmt->execute()) {        

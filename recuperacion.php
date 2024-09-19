@@ -82,7 +82,8 @@
                         if (response.status === 'success') {
                             Swal.fire({
                                 title: 'Recuperación',
-                                html: 'Se ha enviado el correo de recuperación -> <a href="http://localhost/team_house/recuperacion2.php?code='+response.reset_code+'">Link de restauración</href>',
+                                html: 'Se ha enviado el correo de recuperación ',
+                                //html: 'Se ha enviado el correo de recuperación -> <a href="http://localhost/team_house/recuperacion2.php?code='+response.reset_code+'">Link de restauración</href>',
                                 icon: 'success',
                                 confirmButtonText: 'Aceptar'
                             });
