@@ -1,0 +1,58 @@
+.navbar{
+    width: 100%;    
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;    
+    color:blueviolet;
+}
+
+.menu .btn-group {
+    flex: 1 1 auto;    
+    min-width: 150px;   
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 70px; /* Ajusta la altura según sea necesario */
+}
+
+.logo-container img {
+    max-height: 100%; 
+}
+
+.navbar-brand {
+    margin-left: 5px; /* Espaciado entre logo y texto */
+    color: #ffffff !important;
+}
+
+.dashboard {
+    width: 800px; 
+    height: 600px; 
+}
+
+.card{
+    width:90%;
+    max-width: 400px;
+    padding: 5rem 2.5rem;
+    border-radius: 1rem;
+    border:1px solid transparent;
+    backdrop-filter:blur(1rem);
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0,0,0,0.5);
+    border-top-color: rgba(225,225,225,0.5);
+    border-left-color: rgba(225,225,225,0.5);
+    border-bottom-color: rgba(225,225,225,0.1);
+    border-right-color: rgba(225,225,225,0.1);    
+}
+
+.btn{
+    border-radius: 2rem;
+}
+
+
+.btn:hover{
+    box-shadow:0 0.3rem 1rem rgba(0,0,0,0.3);
+}
